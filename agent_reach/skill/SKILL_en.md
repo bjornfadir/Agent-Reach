@@ -59,7 +59,7 @@ metadata:
 mcporter call exa.web_search_exa query="query" numResults=5
 
 # Read any web page
-curl -s "https://r.jina.ai/URL"
+curl -s -H "X-No-Cache: true" "https://r.jina.ai/URL"
 
 # GitHub search
 gh search repos "query" --sort stars --limit 10

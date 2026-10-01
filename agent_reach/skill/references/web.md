@@ -6,7 +6,7 @@
 
 ```bash
 # 读取任意网页内容
-curl -s "https://r.jina.ai/URL"
+curl -s -H "X-No-Cache: true" "https://r.jina.ai/URL"
 
 # 示例
 curl -s "https://r.jina.ai/https://example.com/article"
