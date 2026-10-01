@@ -1,29 +1,23 @@
 ---
 name: agent-reach
 description: >
-  MUST USE when user wants to research/search/look up/find anything on the
-  internet — e.g. "research this topic", "do a deep dive on X", "search the
-  web for X", "see what people say about X", "look this up".
+  Use when the user wants content from a social platform or a site that
+  blocks plain fetching: Twitter/X, Reddit, Facebook, Instagram, LinkedIn,
+  YouTube transcripts, or when WebFetch/curl fails on a URL (403, login wall,
+  bot challenge). Run `agent-reach doctor --json` to see which backend serves
+  each platform right now.
 
-  Also MUST USE when user mentions any platform or shares any URL/link:
-  Twitter/X, Reddit, Facebook, Instagram, YouTube, GitHub, Bilibili, XiaoHongShu,
-  Xiaoyuzhou Podcast, LinkedIn/Boss直聘/jobs/recruiting, V2EX, Xueqiu (stocks), RSS.
-
-  16 platforms, multi-backend routing (OpenCLI / per-platform CLIs / APIs).
-  Zero config for 6 channels. Run `agent-reach doctor --json` to see which
-  backend serves each platform right now.
-
-  NOT for: writing reports/analysis/translation (this skill only FETCHES
-  internet content); posting/commenting/liking (write operations); platforms
-  that already have a dedicated skill installed (prefer that skill).
+  NOT for: general web research or ordinary page reads (use the existing
+  research skills and WebFetch first); writing/analysis/translation;
+  posting/commenting/liking (write operations); platforms that already have
+  a dedicated skill or MCP (e.g. GitHub via gh).
 metadata:
   homepage: https://github.com/Panniantong/Agent-Reach
 ---
 
 # Agent Reach — internet capability router
 
-16 platforms, multiple backends each. **When this skill exists, use it for
-these platforms — do not invent your own approach.**
+16 platforms, multiple backends each. **For these platforms, use this skill's commands rather than inventing your own.**
 
 ## Standing rules (apply for the whole session)
 
@@ -40,11 +34,11 @@ these platforms — do not invent your own approach.**
    Twitter/Reddit for discussions + XiaoHongShu/Bilibili for Chinese
    perspectives), collect in parallel, then synthesize.
 5. **Watch versions for the user**: after finishing a substantial
-   multi-platform task, run `agent-reach check-update` (fast, one API call).
-   If a new version exists, append one line to your wrap-up: "Agent Reach
-   vX.Y.Z is available — paste this to me to update: 帮我更新 Agent Reach：
-   https://raw.githubusercontent.com/Panniantong/agent-reach/main/docs/update.md".
-   Never interrupt the current task to update; never nag about the same version twice.
+   multi-platform task, run `agent-reach check-update`. If a new version
+   exists, mention it in one line of the wrap-up. This install runs from the
+   fork at ~/forks/agent-reach (bjornfadir/Agent-Reach): update by merging
+   upstream into the fork and reinstalling, never from the upstream
+   update.md URL, which would drop local changes.
 
 ## Routing table
 
